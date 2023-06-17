@@ -28,7 +28,7 @@
         <p>
             {{ form.password2.label }}
             {{ form.password2(size=32) }}<br>
-            {% for error in form.oassword2.errors %}
+            {% for error in form.password2.errors %}
             <span style="color:red">{{ error }}</span>
             {% endfor %}
         </p>
