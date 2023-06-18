@@ -14,7 +14,6 @@ from datetime import datetime
 @app.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
-    render = 'index.html'
     form = PostForm()
     if form.validate_on_submit():
         post = Post(body=form.post.data, author=current_user)
@@ -31,7 +30,7 @@ def index():
         if posts.has_next else None
     prev_url = url_for('index', page=posts.prev_num) \
         if posts.has_prev else None
-    return render_template(render, title='Home Page', form=form, posts=posts.items,
+    return render_template('index.html', title='Home Page', form=form, posts=posts.items,
                            next_url=next_url, prev_url=prev_url)
 
 
@@ -79,11 +78,15 @@ def logout():
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
-    posts = [
-        {'author': user, 'body': 'Test Post #1'},
-        {'author': user, 'body': 'Test Post #2'},
-    ]
-    return render_template('user.html', user=user, posts=posts)
+    page = request.args.get('page', 1, type=int)
+    posts = current_user.current_user_posts(user.id).paginate(
+        page=page, per_page=app.config['POSTS_PER_PAGE'])
+    next_url = url_for('user', username=username, page=posts.next_num) \
+        if posts.has_next else None
+    prev_url = url_for('user', username=username, page=posts.prev_num) \
+        if posts.has_prev else None
+    return render_template('user.html', user=user, posts=posts.items, 
+                           next_url=next_url, prev_url=prev_url)
 
 
 @app.route('/edit_profile', methods=['GET', 'POST'])

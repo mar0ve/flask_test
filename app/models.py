@@ -54,6 +54,8 @@ class User(UserMixin, db.Model):
         own = Post.query.filter_by(user_id=self.id)
         return followed.union(own).order_by(Post.timestamp.desc())
 
+    def current_user_posts(self, user):
+        return Post.query.filter_by(user_id=user).order_by(Post.timestamp.desc())
     
     def __repr__(self):
         return '<User {}>'.format(self.username)
