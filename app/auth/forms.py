@@ -28,19 +28,6 @@ class RegistrationForm(FlaskForm):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
             raise ValidationError('Please use a different email address.')
-        
-
-class EditProfileForm(FlaskForm):
-    username = StringField('Username: ', validators=[DataRequired()])
-    email = StringField('Email: ', validators=[DataRequired(), Email()])
-    about_me = TextAreaField('About me: ', validators=[Length(min=0, max=140)])
-    submit = SubmitField('Submit')
-    
-
-class PostForm(FlaskForm):
-    post = TextAreaField('Say something: ', validators=[
-        DataRequired(), Length(min=1, max=140)])
-    submit = SubmitField('Submit')
     
 
 class ResetPasswordRequestForm(FlaskForm):
@@ -53,6 +40,3 @@ class ResetPasswordForm(FlaskForm):
     password2 = PasswordField('Confirm Password: ', validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Reset Password')
     
-    
-class EmptyForm(FlaskForm):
-    submit = SubmitField('Submit')
