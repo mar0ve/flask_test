@@ -7,10 +7,11 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         "mysql://root:12345@localhost:3306/flask_db_test"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    MAIL_SERVER = os.environ.get('smtp.gmail.com')
+    MAIL_SERVER = os.environ.get('MAIL_SERVER')
     MAIL_PORT = int(os.environ.get('MAIL_PORT') or 25)
-    MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') is not None
-    MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
-    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
-    ADMINS = ['your-email@example.com']
+    MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') is not None or True
+    MAIL_USERNAME = os.environ.get('MAIL_USERNAME') or ''
+    MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD') or ''
+    ADMINS = ['xovietsons@gmail.com',]
     POSTS_PER_PAGE = 5
+    ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL') or 'http://localhost:9200'

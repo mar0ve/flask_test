@@ -7,4 +7,4 @@ add_data.py
 Dockerfile
 openssh_key
 openssh_key.pub
-requirments.txt
+.flaskenv
