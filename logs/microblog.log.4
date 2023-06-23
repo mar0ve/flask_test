@@ -1,14 +1,14 @@
-2023-06-23 03:52:35,800 ERROR: Exception on / [GET] [in c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py:1414]
+2023-06-22 17:36:43,670 ERROR: Exception on / [GET] [in c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py:1414]
 Traceback (most recent call last):
   File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1965, in _exec_single_context
     self.dialect.do_execute(
   File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\engine\default.py", line 921, in do_execute
     cursor.execute(statement, parameters)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
-    res = self._query(mogrified_query)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
     db.query(q)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\MySQLdb\connections.py", line 255, in query
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\MySQLdb\connections.py", line 254, in query
     _mysql.connection.query(self, query)
 MySQLdb.ProgrammingError: (1146, "Table 'flask_db_test.user' doesn't exist")
 
@@ -35,7 +35,7 @@ Traceback (most recent call last):
     current_app.login_manager._load_user()
   File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask_login\login_manager.py", line 364, in _load_user
     user = self._user_callback(user_id)
-  File "C:\Users\ASUS\Desktop\first_project\app\models.py", line 211, in load_user
+  File "C:\Users\ASUS\Desktop\first_project\app\models.py", line 139, in load_user
     return User.query.get(int(id))
   File "<string>", line 2, in get
   File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\util\deprecations.py", line 386, in warned
@@ -70,24 +70,54 @@ Traceback (most recent call last):
     self.dialect.do_execute(
   File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\engine\default.py", line 921, in do_execute
     cursor.execute(statement, parameters)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
-    res = self._query(mogrified_query)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\MySQLdb\cursors.py", line 206, in execute
+    res = self._query(query)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\MySQLdb\cursors.py", line 319, in _query
     db.query(q)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\MySQLdb\connections.py", line 255, in query
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\MySQLdb\connections.py", line 254, in query
     _mysql.connection.query(self, query)
 sqlalchemy.exc.ProgrammingError: (MySQLdb.ProgrammingError) (1146, "Table 'flask_db_test.user' doesn't exist")
-[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen, user.token AS user_token, user.token_expiration AS user_token_expiration 
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen 
 FROM user 
 WHERE user.id = %s]
-[parameters: (3,)]
+[parameters: (6,)]
 (Background on this error at: https://sqlalche.me/e/20/f405)
-2023-06-23 03:52:49,800 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
-2023-06-23 03:52:58,527 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
-2023-06-23 03:53:04,654 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
-2023-06-23 03:53:38,636 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
-2023-06-23 03:53:46,782 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
-2023-06-23 03:53:56,237 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
-2023-06-23 03:55:56,560 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
-2023-06-23 03:58:23,611 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
-2023-06-23 04:00:36,226 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:79]
+2023-06-22 18:15:29,441 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:86]
+2023-06-22 18:15:53,268 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:86]
+2023-06-22 18:16:16,397 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:86]
+2023-06-22 20:28:25,172 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:86]
+2023-06-22 20:43:51,674 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-22 20:44:03,012 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-22 20:50:05,750 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-22 20:51:05,558 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-22 20:51:43,173 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-22 20:51:54,733 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-22 20:52:05,177 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-22 20:52:22,766 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-22 20:53:36,118 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-22 21:00:37,816 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-22 21:00:55,767 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-22 21:01:08,044 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-22 21:05:18,579 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-22 21:05:33,657 ERROR: Exception on /auth/login [GET] [in c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\ASUS\Desktop\first_project\app\auth\routes.py", line 19, in login
+    return redirect(url_for('auth.index'))
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\helpers.py", line 225, in url_for
+    return current_app.url_for(
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\werkzeug\routing\map.py", line 950, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'auth.index'. Did you mean 'auth.login' instead?
+2023-06-22 21:08:55,233 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]

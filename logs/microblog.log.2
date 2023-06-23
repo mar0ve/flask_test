@@ -1,4 +1,4 @@
-2023-06-21 18:08:02,922 ERROR: Exception on / [GET] [in c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py:1414]
+2023-06-22 21:25:56,147 ERROR: Exception on /api/tokens [POST] [in c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py:1414]
 Traceback (most recent call last):
   File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 2190, in wsgi_app
     response = self.full_dispatch_request()
@@ -8,94 +8,105 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1469, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "C:\Users\ASUS\Desktop\first_project\app\main\routes.py", line 37, in index
-    return render_template('main/index.html', title='Home Page', form=form, posts=posts.items,
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\templating.py", line 150, in render_template
-    template = app.jinja_env.get_or_select_template(template_name_or_list)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\jinja2\environment.py", line 1010, in get_template
-    return self._load_template(name, globals)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\jinja2\environment.py", line 969, in _load_template
-    template = self.loader.load(self, name, self.make_globals(globals))
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\jinja2\loaders.py", line 126, in load
-    source, filename, uptodate = self.get_source(environment, name)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\templating.py", line 64, in get_source
-    return self._get_source_fast(environment, template)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\templating.py", line 98, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: main/index.html
-2023-06-21 18:11:58,480 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:82]
-2023-06-21 18:15:53,162 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:82]
-2023-06-22 16:59:23,081 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:86]
-2023-06-22 16:59:43,880 ERROR: Exception on /search [GET] [in c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py:1414]
+  File "C:\Users\ASUS\Desktop\first_project\app\api\tokens.py", line 10, in get_token
+    token = basic_auth.current_user().get_token()
+AttributeError: 'NoneType' object has no attribute 'get_token'
+2023-06-23 03:21:22,341 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-23 03:35:12,862 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-23 03:35:25,654 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-23 03:35:37,013 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-23 03:36:12,446 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-23 03:36:15,922 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-23 03:36:52,719 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-23 03:37:43,457 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-23 03:38:30,303 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-23 03:42:53,158 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-23 03:43:22,570 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-23 03:43:34,483 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-23 03:46:15,416 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-23 03:46:18,942 ERROR: Exception on / [GET] [in c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\engine\default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+MySQLdb.ProgrammingError: (1146, "Table 'flask_db_test.user' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 2190, in wsgi_app
     response = self.full_dispatch_request()
   File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1469, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "C:\Users\ASUS\Desktop\first_project\app\main\routes.py", line 135, in search
-    posts, total = Post.search(g.search_form.q.data, page,
-  File "C:\Users\ASUS\Desktop\first_project\app\models.py", line 17, in search
-    ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "C:\Users\ASUS\Desktop\first_project\app\search.py", line 22, in query_index
-    search = current_app.elasticsearch.search(
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\elasticsearch\_sync\client\utils.py", line 414, in wrapped
-    return api(*args, **kwargs)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\elasticsearch\_sync\client\__init__.py", line 3859, in search
-    return self.perform_request(  # type: ignore[return-value]
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\elasticsearch\_sync\client\_base.py", line 285, in perform_request
-    meta, resp_body = self.transport.perform_request(
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\elastic_transport\_transport.py", line 329, in perform_request
-    meta, raw_data = node.perform_request(
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 199, in perform_request
-    raise err from None
-elastic_transport.ConnectionError: Connection error caused by: ConnectionError(Connection error caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x0000022DF1DD7B50>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение))
-2023-06-22 17:01:59,624 ERROR: Exception on /index [POST] [in c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py:1414]
-Traceback (most recent call last):
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 2190, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1469, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "C:\Users\ASUS\Desktop\first_project\app\main\routes.py", line 28, in index
-    db.session.commit()
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 552, in commit
-    return self._proxied.commit()
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1899, in commit
-    trans.commit(_to_root=True)
-  File "<string>", line 2, in commit
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\orm\state_changes.py", line 136, in _go
-    ret_value = fn(self, *arg, **kw)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1228, in commit
-    self.session.dispatch.after_commit(self.session)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\event\attr.py", line 378, in __call__
-    fn(*args, **kw)
-  File "C:\Users\ASUS\Desktop\first_project\app\models.py", line 38, in after_commit
-    add_to_index(obj.__tablename__, obj)
-  File "C:\Users\ASUS\Desktop\first_project\app\search.py", line 10, in add_to_index
-    current_app.elasticsearch.index(index=index, id=model.id, body=payload)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\elasticsearch\_sync\client\utils.py", line 414, in wrapped
-    return api(*args, **kwargs)
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\elasticsearch\_sync\client\__init__.py", line 2318, in index
-    return self.perform_request(  # type: ignore[return-value]
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\elasticsearch\_sync\client\_base.py", line 285, in perform_request
-    meta, resp_body = self.transport.perform_request(
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\elastic_transport\_transport.py", line 329, in perform_request
-    meta, raw_data = node.perform_request(
-  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 199, in perform_request
-    raise err from None
-elastic_transport.ConnectionError: Connection error caused by: ConnectionError(Connection error caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x0000022DF31C5B20>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение))
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1482, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1974, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "C:\Users\ASUS\Desktop\first_project\app\main\routes.py", line 14, in before_request
+    if current_user.is_authenticated:
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\werkzeug\local.py", line 311, in __get__
+    obj = instance._get_current_object()
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\werkzeug\local.py", line 515, in _get_current_object
+    return get_name(local())  # type: ignore
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask_login\utils.py", line 25, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask_login\utils.py", line 372, in _get_user
+    current_app.login_manager._load_user()
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask_login\login_manager.py", line 364, in _load_user
+    user = self._user_callback(user_id)
+  File "C:\Users\ASUS\Desktop\first_project\app\models.py", line 211, in load_user
+    return User.query.get(int(id))
+  File "<string>", line 2, in get
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\util\deprecations.py", line 386, in warned
+    return fn(*args, **kwargs)  # type: ignore[no-any-return]
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1130, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1139, in _get_impl
+    return self.session._get_impl(
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3663, in _get_impl
+    return db_load_fn(
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\orm\loading.py", line 666, in load_on_pk_identity
+    session.execute(
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2225, in execute
+    return self._execute_internal(
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2120, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\orm\context.py", line 293, in orm_execute_statement
+    result = conn.execute(
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1412, in execute
+    return meth(
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 483, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1635, in _execute_clauseelement
+    ret = self._execute_context(
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1844, in _execute_context
+    return self._exec_single_context(
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1984, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2339, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1965, in _exec_single_context
+    self.dialect.do_execute(
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\engine\default.py", line 921, in do_execute
+    cursor.execute(statement, parameters)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\MySQLdb\connections.py", line 255, in query
+    _mysql.connection.query(self, query)
+sqlalchemy.exc.ProgrammingError: (MySQLdb.ProgrammingError) (1146, "Table 'flask_db_test.user' doesn't exist")
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen, user.token AS user_token, user.token_expiration AS user_token_expiration 
+FROM user 
+WHERE user.id = %s]
+[parameters: (3,)]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2023-06-23 03:52:20,031 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]
+2023-06-23 03:52:34,315 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:89]

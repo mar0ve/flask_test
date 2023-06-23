@@ -16,7 +16,7 @@ from datetime import datetime
 def login():
     form = LoginForm()
     if current_user.is_authenticated:
-        return redirect(url_for('auth.index'))
+        return redirect(url_for('main.index'))
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user is None or not user.check_password(form.password.data):

@@ -1,0 +1,101 @@
+2023-06-21 18:08:02,922 ERROR: Exception on / [GET] [in c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "C:\Users\ASUS\Desktop\first_project\app\main\routes.py", line 37, in index
+    return render_template('main/index.html', title='Home Page', form=form, posts=posts.items,
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\templating.py", line 150, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\jinja2\environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\jinja2\environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\templating.py", line 64, in get_source
+    return self._get_source_fast(environment, template)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: main/index.html
+2023-06-21 18:11:58,480 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:82]
+2023-06-21 18:15:53,162 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:82]
+2023-06-22 16:59:23,081 INFO: Microblog startup [in C:\Users\ASUS\Desktop\first_project\app\__init__.py:86]
+2023-06-22 16:59:43,880 ERROR: Exception on /search [GET] [in c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "C:\Users\ASUS\Desktop\first_project\app\main\routes.py", line 135, in search
+    posts, total = Post.search(g.search_form.q.data, page,
+  File "C:\Users\ASUS\Desktop\first_project\app\models.py", line 17, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "C:\Users\ASUS\Desktop\first_project\app\search.py", line 22, in query_index
+    search = current_app.elasticsearch.search(
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\elasticsearch\_sync\client\utils.py", line 414, in wrapped
+    return api(*args, **kwargs)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\elasticsearch\_sync\client\__init__.py", line 3859, in search
+    return self.perform_request(  # type: ignore[return-value]
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\elasticsearch\_sync\client\_base.py", line 285, in perform_request
+    meta, resp_body = self.transport.perform_request(
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\elastic_transport\_transport.py", line 329, in perform_request
+    meta, raw_data = node.perform_request(
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 199, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ConnectionError(Connection error caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x0000022DF1DD7B50>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение))
+2023-06-22 17:01:59,624 ERROR: Exception on /index [POST] [in c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "C:\Users\ASUS\Desktop\first_project\app\main\routes.py", line 28, in index
+    db.session.commit()
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\orm\scoping.py", line 552, in commit
+    return self._proxied.commit()
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1899, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\orm\state_changes.py", line 136, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1228, in commit
+    self.session.dispatch.after_commit(self.session)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\sqlalchemy\event\attr.py", line 378, in __call__
+    fn(*args, **kw)
+  File "C:\Users\ASUS\Desktop\first_project\app\models.py", line 38, in after_commit
+    add_to_index(obj.__tablename__, obj)
+  File "C:\Users\ASUS\Desktop\first_project\app\search.py", line 10, in add_to_index
+    current_app.elasticsearch.index(index=index, id=model.id, body=payload)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\elasticsearch\_sync\client\utils.py", line 414, in wrapped
+    return api(*args, **kwargs)
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\elasticsearch\_sync\client\__init__.py", line 2318, in index
+    return self.perform_request(  # type: ignore[return-value]
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\elasticsearch\_sync\client\_base.py", line 285, in perform_request
+    meta, resp_body = self.transport.perform_request(
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\elastic_transport\_transport.py", line 329, in perform_request
+    meta, raw_data = node.perform_request(
+  File "c:\users\asus\desktop\first_project\venv\lib\site-packages\elastic_transport\_node\_http_urllib3.py", line 199, in perform_request
+    raise err from None
+elastic_transport.ConnectionError: Connection error caused by: ConnectionError(Connection error caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x0000022DF31C5B20>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение))

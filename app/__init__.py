@@ -25,17 +25,7 @@ moment = Moment()
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:12345@localhost:3306/flask_db_test"
-    app.config['POSTS_PER_PAGE'] = 5
-    app.config['SECRET_KEY'] = '1234567890'
-    # MAIL REQUIRMENTS
-    app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-    app.config['MAIL_PORT'] = 587
-    app.config['MAIL_USE_TLS'] = True
-    app.config['MAIL_USERNAME'] = 'your_email_here'
-    app.config['MAIL_PASSWORD'] = 'your_password_here'
-    app.config['ADMINS'] = ['admin_email_here',]
+
     db.init_app(app)
     migrate.init_app(app, db)
     login.init_app(app)
@@ -54,6 +44,9 @@ def create_app(config_class=Config):
 
     from app.main import bp as main_bp
     app.register_blueprint(main_bp)
+    
+    from app.api import bp as api_bp
+    app.register_blueprint(api_bp, url_prefix='/api')
 
     if not app.debug and not app.testing:
         if app.config['MAIL_SERVER']:
