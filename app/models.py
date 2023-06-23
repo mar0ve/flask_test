@@ -9,6 +9,7 @@ from time import time
 import jwt
 from app.search import add_to_index, query_index, remove_from_index
 from flask import url_for
+import os
     
     
 class PaginatedAPIMixin(object):
