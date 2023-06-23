@@ -20,7 +20,7 @@
 - flask run - запускает проект
 
 
-# Работа с докером
+# Запуск в Docker Container
 
-В терминале git bash ввести 
 > docker build -t microblog:latest .
+> docker run --name microblog -d -p 8000:5000 --rm -e SECRET_KEY=test_key -e MAIL_SERVER=smtp.gmail.com -e MAIL_PORT=587 -e MAIL_USE_TLS=true -e MAIL_USERNAME=your_mail@gmail.com -e MAIL_PASSWORD=your_password microblog:latest
